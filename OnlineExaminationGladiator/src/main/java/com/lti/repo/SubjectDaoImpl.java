@@ -7,8 +7,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
+import org.springframework.stereotype.Repository;
+
 import com.lti.model.Subject;
 
+@Repository
 public class SubjectDaoImpl implements SubjectDao {
 	@PersistenceContext
 	EntityManager em;

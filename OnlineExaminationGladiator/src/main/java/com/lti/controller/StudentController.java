@@ -1,8 +1,11 @@
 package com.lti.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.lti.model.Exam;
 import com.lti.model.Student;
 import com.lti.service.StudentService;
 
@@ -31,5 +34,15 @@ public class StudentController {
 	public boolean loginStudent(int userId, String password) {
 		return service.loginStudent(userId, password);
 	}
+	
+	public List<Student> viewAllStudents() {
+		return service.viewAllStudents();
+	}
+	
+	public List<Exam> viewAllExamsOfStudent(int studentId) {
+		return service.viewAllExamsOfStudent(studentId);
+	}
+	
+	
 
 }

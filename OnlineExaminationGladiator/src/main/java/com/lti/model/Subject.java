@@ -20,10 +20,10 @@ public class Subject {
 	@Column(name="SUBJECT_NAME")
 	private String subjectName;
 	
-	@OneToMany(mappedBy="testSubject" ,cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="examSubject" ,cascade=CascadeType.ALL)
 	private List<Exam> subjectExams;
 	
-	@OneToMany(mappedBy="examSubject" ,cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="questionSubject" ,cascade=CascadeType.ALL)
 	private List<Question> subjectQuestions;
 
 	public int getSubjectId() {

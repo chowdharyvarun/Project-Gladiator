@@ -9,6 +9,7 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.lti.model.Exam;
 import com.lti.model.Student;
 
 @Repository
@@ -19,7 +20,7 @@ public class StudentDaoImpl implements StudentDao {
 	@Transactional
 	public int addNewStudent(Student student) {
 		Student s = em.merge(student);
-		return student.getStudentID();
+		return s.getStudentID();
 	}
 
 	@Transactional
@@ -56,6 +57,18 @@ public class StudentDaoImpl implements StudentDao {
 
 		return true;
 		
+	}
+
+	public List<Student> viewAllStudents() {
+		String sql = "select stud from Student stud";
+		TypedQuery<Student> qry = em.createQuery(sql, Student.class);
+		List<Student> students = qry.getResultList();
+		return students;
+	}
+
+	public List<Exam> viewAllExamsOfStudent(int studentId) {
+		Student student = em.find(Student.class, studentId);
+		return student.getStudentExams();
 	}
 
 }

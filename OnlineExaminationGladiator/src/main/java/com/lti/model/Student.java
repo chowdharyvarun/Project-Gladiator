@@ -1,5 +1,6 @@
 package com.lti.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -7,14 +8,19 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
+//@Table(name = "student_glad")
 public class Student {
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name = "sequence_student", initialValue = 20201, allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_student")
 	@Column(name = "STUDENT_ID")
 	private int studentID;
 
@@ -25,7 +31,7 @@ public class Student {
 	private String studentPassword;
 
 	@Column(name = "STUDENT_DOB")
-	private Date studentDOB;
+	private LocalDate studentDOB;
 
 	@Column(name = "STUDENT_EMAIL")
 	private String studentEmail;
@@ -43,7 +49,7 @@ public class Student {
 	private int studentYOC;
 
 	@Column(name = "STUDENT_MNO")
-	private long studentMobile;
+	private String studentMobile;
 
 	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
 	private List<Exam> studentExams;
@@ -72,11 +78,11 @@ public class Student {
 		this.studentPassword = studentPassword;
 	}
 
-	public Date getStudentDOB() {
+	public LocalDate getStudentDOB() {
 		return studentDOB;
 	}
 
-	public void setStudentDOB(Date studentDOB) {
+	public void setStudentDOB(LocalDate studentDOB) {
 		this.studentDOB = studentDOB;
 	}
 
@@ -120,11 +126,11 @@ public class Student {
 		this.studentYOC = studentYOC;
 	}
 
-	public long getStudentMobile() {
+	public String getStudentMobile() {
 		return studentMobile;
 	}
 
-	public void setStudentMobile(long studentMobile) {
+	public void setStudentMobile(String studentMobile) {
 		this.studentMobile = studentMobile;
 	}
 

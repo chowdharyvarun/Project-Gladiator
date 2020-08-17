@@ -25,7 +25,7 @@ public class Exam {
 	
 	@ManyToOne
 	@JoinColumn(name="SUBJECT_ID")
-	private Subject testSubject;
+	private Subject examSubject;
 	
 	@ManyToOne
 	@JoinColumn(name="STUDENT_ID")
@@ -35,6 +35,56 @@ public class Exam {
 	private List<Response> responses;
 	
 	@OneToOne(mappedBy="examDetail",cascade = CascadeType.ALL)
-	private Result testResult;
+	private Result examResult;
+
+	public int getExamId() {
+		return examId;
+	}
+
+	public void setExamId(int examId) {
+		this.examId = examId;
+	}
+
+	public String getExamName() {
+		return examName;
+	}
+
+	public void setExamName(String examName) {
+		this.examName = examName;
+	}
+
+	public Subject getTestSubject() {
+		return examSubject;
+	}
+
+	public void setTestSubject(Subject testSubject) {
+		this.examSubject = testSubject;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	public List<Response> getResponses() {
+		return responses;
+	}
+
+	public void setResponses(List<Response> responses) {
+		this.responses = responses;
+	}
+
+	public Result getTestResult() {
+		return examResult;
+	}
+
+	public void setTestResult(Result testResult) {
+		this.examResult = testResult;
+	}
+	
+	
 
 }

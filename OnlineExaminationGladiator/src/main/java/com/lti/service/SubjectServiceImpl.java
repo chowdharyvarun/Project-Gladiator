@@ -3,14 +3,17 @@ package com.lti.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.lti.model.Subject;
 import com.lti.repo.SubjectDao;
 
+@Service
 public class SubjectServiceImpl implements SubjectService {
 
 	@Autowired
 	SubjectDao dao;
+	
 	public int addNewSubject(Subject subject) {
 		return dao.addNewSubject(subject);
 	}

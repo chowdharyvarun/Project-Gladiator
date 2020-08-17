@@ -1,8 +1,11 @@
 package com.lti.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lti.model.Exam;
 import com.lti.model.Student;
 import com.lti.repo.StudentDao;
 
@@ -30,6 +33,14 @@ public class StudentServiceImpl implements StudentService {
 
 	public boolean loginStudent(int userId, String password) {
 		return dao.loginStudent(userId, password);
+	}
+
+	public List<Student> viewAllStudents() {
+		return dao.viewAllStudents();
+	}
+
+	public List<Exam> viewAllExamsOfStudent(int studentId) {
+		return dao.viewAllExamsOfStudent(studentId);
 	}
 
 }
