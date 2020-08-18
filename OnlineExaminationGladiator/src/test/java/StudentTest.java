@@ -30,5 +30,47 @@ public class StudentTest {
 		int i = controller.addNewStudent(stud);
 		System.out.println("Student Successfully registered, ID - "+i);
 	}
+	
+	@Test
+	public void deleteStudentTest() {
+		System.out.println(controller.deleteStudent(20202));
+	}
+	
+	@Test
+	public void findAUserTest() {
+		System.out.println(controller.findAUser(20203));
+	}
+	
+	@Test
+	public void loginStudentTest() {
+		System.out.println(controller.loginStudent(20203, "amy"));	
+	}
+	
+	@Test
+	public void updateStudentTest() {
+		Student stud = new Student();
+		stud.setStudentID(20203);
+		stud.setStudentName("Sheldon Cooper");
+		stud.setSudentPassword("starWars");
+		stud.setStudentDOB(LocalDate.of(1988, 02, 15));
+		stud.setStudentEmail("cooper.sheldon@gmail.com");
+		stud.setStudentGender("Male");
+		stud.setStudentCity("Pasadena");
+		stud.setStudentState("California");
+		stud.setStudentYOC(2018);
+		stud.setStudentMobile("99889");
+		
+		System.out.println(controller.updateStudent(stud));
+	}
+	
+	@Test
+	public void viewAllStudentsTest() {
+		System.out.println(controller.viewAllStudents());
+	}
+	
+	@Test
+	public void viewAllExamsOfStudentTest() {
+		System.out.println(controller.viewAllExamsOfStudent(20203));
+	}
 
 }

@@ -84,6 +84,12 @@ public class Exam {
 	public void setTestResult(Result testResult) {
 		this.examResult = testResult;
 	}
+
+	@Override
+	public String toString() {
+		return "Exam [examId=" + examId + ", examName=" + examName + "]";
+	}
+	
 	
 	
 

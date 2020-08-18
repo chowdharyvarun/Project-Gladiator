@@ -25,7 +25,7 @@ public class StudentDaoImpl implements StudentDao {
 
 	@Transactional
 	public boolean updateStudent(Student student) {
-		if (em.find(Student.class, student.getStudentCity()) != null) {
+		if (em.find(Student.class, student.getStudentID()) != null) {
 			em.merge(student);
 			return true;
 		}
@@ -47,10 +47,10 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 	public boolean loginStudent(int userId, String password) {
-		String sql = "select stud from Student stud where stud.studentId = :sid and stud.studentPassword = :sp";
+		String sql = "select stud from Student stud where stud.studentID = :sid and stud.studentPassword = :sp";
 		TypedQuery<Student> qry = em.createQuery(sql, Student.class);
-		qry.setParameter("uid", userId);
-		qry.setParameter("up", password);
+		qry.setParameter("sid", userId);
+		qry.setParameter("sp", password);
 		List<Student> students = qry.getResultList();
 		if (students.isEmpty())
 			return false;

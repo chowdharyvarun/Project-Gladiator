@@ -141,6 +141,14 @@ public class Student {
 	public void setStudentExams(List<Exam> studentExams) {
 		this.studentExams = studentExams;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [studentID=" + studentID + ", studentName=" + studentName + ", studentPassword="
+				+ studentPassword + ", studentDOB=" + studentDOB + ", studentEmail=" + studentEmail + ", studentGender="
+				+ studentGender + ", studentCity=" + studentCity + ", studentState=" + studentState + ", studentYOC="
+				+ studentYOC + ", studentMobile=" + studentMobile + "]";
+	}
 	
 	
 
