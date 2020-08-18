@@ -33,10 +33,10 @@ public class ExamDaoImpl implements ExamDao {
 		return exams;
 	}
 
-	public List<Exam> listExamsOfASubject(int subjectId) {
+	public List<Exam> listExamsOfASubject(Subject subject) {
 		String sql = "select ex from Exam ex where ex.examSubject = :sub";
 		TypedQuery<Exam> qry = em.createQuery(sql, Exam.class);
-		qry.setParameter("sub", subjectId);
+		qry.setParameter("sub", subject);
 		List<Exam> exams = qry.getResultList();
 		return exams;
 	}

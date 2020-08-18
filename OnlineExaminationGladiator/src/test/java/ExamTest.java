@@ -34,5 +34,11 @@ public class ExamTest {
 		stu.setStudentExams(examList);
 		System.out.println(controller.addNewExam(exam));
 	}
+	
+	@Test
+	public void listExamsOfASubjectTest() {
+		Subject sub = subControl.getSubjectBYSubjectId(22);
+		System.out.println(controller.listExamsOfASubject(sub));
+	}
 
 }

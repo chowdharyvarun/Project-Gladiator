@@ -9,7 +9,7 @@ public interface ExamDao {
 	
 	int addNewExam(Exam exam);
 	List<Exam> listAllExams();
-	List<Exam> listExamsOfASubject(int subjectId);
+	List<Exam> listExamsOfASubject(Subject subject);
 	Exam findExamById(int examId);
 	List<Exam> listAllExamsOfAStudent(int studentId);
 	
