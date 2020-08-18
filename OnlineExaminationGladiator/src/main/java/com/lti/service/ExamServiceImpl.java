@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.lti.model.Exam;
 import com.lti.model.Question;
+import com.lti.model.Student;
 import com.lti.model.Subject;
 import com.lti.repo.ExamDao;
 
@@ -32,8 +33,8 @@ public class ExamServiceImpl implements ExamService {
 		return dao.findExamById(examId);
 	}
 
-	public List<Exam> listAllExamsOfAStudent(int studentId) {
-		return dao.listAllExamsOfAStudent(studentId);
+	public List<Exam> listAllExamsOfAStudent(Student student) {
+		return dao.listAllExamsOfAStudent(student);
 	}
 
 

@@ -40,5 +40,11 @@ public class ExamTest {
 		Subject sub = subControl.getSubjectBYSubjectId(22);
 		System.out.println(controller.listExamsOfASubject(sub));
 	}
+	
+	@Test
+	public void listAllExamsOfAStudentTest() {
+		Student stu = stuControl.findAUser(20203);
+		System.out.println(controller.listAllExamsOfAStudent(stu));
+	}
 
 }

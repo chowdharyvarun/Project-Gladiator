@@ -68,9 +68,9 @@ public class StudentTest {
 		System.out.println(controller.viewAllStudents());
 	}
 	
-	@Test
-	public void viewAllExamsOfStudentTest() {
-		System.out.println(controller.viewAllExamsOfStudent(20203));
-	}
+//	@Test
+//	public void viewAllExamsOfStudentTest() {
+//		System.out.println(controller.viewAllExamsOfStudent(20203));
+//	}
 
 }

@@ -39,8 +39,8 @@ public class StudentServiceImpl implements StudentService {
 		return dao.viewAllStudents();
 	}
 
-	public List<Exam> viewAllExamsOfStudent(int studentId) {
-		return dao.viewAllExamsOfStudent(studentId);
-	}
+//	public List<Exam> viewAllExamsOfStudent(int studentId) {
+//		return dao.viewAllExamsOfStudent(studentId);
+//	}
 
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.lti.model.Exam;
+import com.lti.model.Student;
 import com.lti.model.Subject;
 import com.lti.service.ExamService;
 
@@ -31,8 +32,8 @@ public class ExamController {
 		return service.findExamById(examId);
 	}
 
-	public List<Exam> listAllExamsOfAStudent(int studentId) {
-		return service.listAllExamsOfAStudent(studentId);
+	public List<Exam> listAllExamsOfAStudent(Student student) {
+		return service.listAllExamsOfAStudent(student);
 	}
 
 }

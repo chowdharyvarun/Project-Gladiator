@@ -66,9 +66,9 @@ public class StudentDaoImpl implements StudentDao {
 		return students;
 	}
 
-	public List<Exam> viewAllExamsOfStudent(int studentId) {
-		Student student = em.find(Student.class, studentId);
-		return student.getStudentExams();
-	}
+//	public List<Exam> viewAllExamsOfStudent(int studentId) {
+//		Student student = em.find(Student.class, studentId);
+//		return student.getStudentExams();
+//	}
 
 }

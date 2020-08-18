@@ -39,9 +39,9 @@ public class StudentController {
 		return service.viewAllStudents();
 	}
 	
-	public List<Exam> viewAllExamsOfStudent(int studentId) {
-		return service.viewAllExamsOfStudent(studentId);
-	}
+//	public List<Exam> viewAllExamsOfStudent(int studentId) {
+//		return service.viewAllExamsOfStudent(studentId);
+//	}
 	
 	
 

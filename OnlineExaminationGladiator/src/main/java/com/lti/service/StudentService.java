@@ -12,5 +12,5 @@ public interface StudentService {
 	Student findAUser(int userId);
 	boolean loginStudent(int userId , String password);
 	List<Student> viewAllStudents();
-	List<Exam> viewAllExamsOfStudent(int studentId);
+//	List<Exam> viewAllExamsOfStudent(int studentId);
 }
